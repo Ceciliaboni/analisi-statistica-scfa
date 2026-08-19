@@ -1,145 +1,145 @@
-# Statistical Analysis of Short-Chain Fatty Acids (SCFAs)
+# Analisi Statistica degli Acidi Grassi a Catena Corta (SCFA)
 
-### Multi-disease study on parallel plasma and fecal samples
+### Studio multi-malattia su campioni paralleli di plasma e feci
 
-This repository contains the statistical analysis developed for my Bachelor's thesis in Statistics at the University of Florence during the Academic Year 2024/2025.
+Questa repository contiene l'analisi statistica sviluppata per la mia tesi di Laurea Triennale in Statistica presso l'Università degli Studi di Firenze durante l'Anno Accademico 2024/2025.
 
-The study investigates the concentrations of seven short-chain fatty acids (SCFAs) measured in plasma and fecal samples from four clinical groups.
+Lo studio analizza le concentrazioni di sette acidi grassi a catena corta (SCFA) misurate in campioni di plasma e feci provenienti da quattro gruppi clinici.
 
-The main objectives are to:
+Gli obiettivi principali sono:
 
-- compare SCFA concentrations across clinical groups;
-- evaluate their ability to discriminate between different clinical conditions;
-- investigate the relationship between plasma and fecal SCFA concentrations.
-
----
-
-## Clinical Groups
-
-The analysis considers four clinical groups:
-
-- **CD** — Celiac Disease
-- **CRC** — Colorectal Cancer
-- **HC** — Healthy Controls
-- **Obesi** — Obesity
-
-For each patient, the concentrations of seven SCFAs were measured in both plasma and fecal samples.
+- confrontare le concentrazioni di SCFA tra i diversi gruppi clinici;
+- valutare la loro capacità discriminante rispetto alle diverse condizioni cliniche;
+- indagare la relazione tra le concentrazioni di SCFA plasmatiche e fecali.
 
 ---
 
-## Statistical Methods
+## Gruppi Clinici
 
-The analysis includes:
+L'analisi prende in esame quattro gruppi clinici:
 
-- Descriptive statistics
-- Correlation analysis
-- Principal Component Analysis (PCA)
-- Hierarchical Cluster Analysis
-- Ward's method
-- Kruskal-Wallis test
-- Dunn's post-hoc test
-- Multinomial Logistic Regression
-- 10-fold Cross-Validation
-- Fisher's Linear Discriminant Analysis (LDA)
+- **CD** — Celiachia (Celiac Disease)
+- **CRC** — Carcinoma del colon-retto (Colorectal Cancer)
+- **HC** — Controlli sani (Healthy Controls)
+- **Obesi** — Obesità
 
-These methods were used to investigate differences between clinical groups and evaluate the discriminatory ability of SCFA concentrations.
+Per ciascun paziente, le concentrazioni dei sette SCFA sono state misurate sia su campioni plasmatici che fecali.
 
 ---
 
-## Key Findings
+## Metodologie Statistiche
 
-The analysis shows that **plasma SCFA concentrations are more informative than fecal concentrations for discriminating between the clinical groups**.
+L'analisi comprende:
 
-In particular, plasma measurements provide stronger discrimination of healthy controls from the clinical groups.
+- Statistica descrittiva
+- Analisi di correlazione
+- Analisi delle Componenti Principali (PCA)
+- Analisi dei Cluster Gerarchica (Hierarchical Cluster Analysis)
+- Metodo di Ward
+- Test di Kruskal-Wallis
+- Test post-hoc di Dunn
+- Regressione Logistica Multinomiale
+- Cross-Validation 10-fold
+- Analisi Discriminante Lineare di Fisher (LDA)
 
-The multinomial logistic regression analysis also identifies **Valeric acid** as consistently associated with clinical group membership in the plasma data.
-
-The combined plasma and fecal model provides good classification results, but does not show a substantial improvement compared with the plasma model alone.
-
-The hierarchical clustering analysis based on Ward's method does not fully separate all four clinical groups, although plasma and fecal samples appear to provide complementary information.
+Questi metodi sono stati impiegati per indagare le differenze tra i gruppi clinici e valutare il potere discriminante delle concentrazioni di SCFA.
 
 ---
 
-## Analysis Workflow
+## Risultati Principali
+
+L'analisi evidenzia che **le concentrazioni plasmatiche di SCFA risultano più informative rispetto a quelle fecali nella discriminazione tra i gruppi clinici**.
+
+In particolare, le misurazioni plasmatiche garantiscono una separazione più netta dei controlli sani rispetto ai gruppi patologici.
+
+L'analisi di regressione logistica multinomiale identifica inoltre l'**acido valerico** come biomarcatore significativamente associato all'appartenenza ai gruppi clinici nei dati plasmatici.
+
+Il modello congiunto su dati plasmatici e fecali fornisce buone prestazioni di classificazione, pur senza mostrare un incremento sostanziale rispetto al modello basato unicamente sul plasma.
+
+La cluster analysis gerarchica basata sul metodo di Ward non separa completamente tutti e quattro i gruppi clinici, sebbene i campioni plasmatici e fecali mostrino informazioni tra loro complementari.
+
+---
+
+## Flusso di Lavoro dell'Analisi (Workflow)
 
 ```text
-Data
+Dati
  │
- ├── Plasma samples
+ ├── Campioni di plasma
  │
- └── Fecal samples
+ └── Campioni di feci
         │
         ▼
-Exploratory Analysis
+Analisi Esplorativa
         │
-        ├── Descriptive statistics
-        ├── Correlations
+        ├── Statistica descrittiva
+        ├── Correlazioni
         └── PCA
         │
         ▼
 Cluster Analysis
-   └── Ward's method
+   └── Metodo di Ward
         │
         ▼
-Group Comparison
+Confronto tra Gruppi
    ├── Kruskal-Wallis
-   └── Dunn's test
+   └── Test di Dunn
         │
         ▼
-Multinomial Logistic Regression
+Regressione Logistica Multinomiale
    ├── Plasma
-   ├── Fecal
-   └── Combined data
+   ├── Feci
+   └── Dati combinati
         │
         ▼
-10-Fold Cross-Validation
+Cross-Validation 10-Fold
         │
         ▼
-Classification
-   └── Fisher's LDA
+Classificazione
+   └── LDA di Fisher
 ```
-## Technologies
+## Tecnologie
 
-The analysis was developed in **R**.
+L'analisi è stata sviluppata in **R**.
 
-The main statistical methods and topics covered in the project are:
+Le principali metodologie statistiche e tematiche affrontate nel progetto sono:
 
-- Statistical inference
-- Exploratory data analysis
-- Multivariate analysis
-- Principal Component Analysis (PCA)
+- Inferenza statistica
+- Analisi esplorativa dei dati (EDA)
+- Analisi multivariata
+- Analisi delle Componenti Principali (PCA)
 - Cluster analysis
-- Classification
-- Logistic regression
-- Linear Discriminant Analysis (LDA)
+- Classificazione
+- Regressione logistica
+- Analisi Discriminante Lineare (LDA)
 - Cross-validation
 - Data visualization
 
 ---
 
-## Repository Structure
+## Struttura della Repository
 ```text
 .
 ├── README.md
-├── tesi.R
+├── analisi.R
 └── tesi.pdf
 ```
-- ```tesi.R``` — R script containing the statistical analyses.
-- ```tesi.pdf``` — Bachelor's thesis.
-- ```README.md``` — project documentation.
+- ```analisi.R``` — Script R contenente l'intera pipeline di analisi statistica..
+- ```tesi.pdf``` — Tesi di laurea completa.
+- ```README.md``` — Tesi di laurea completa.
 ---
-## Academic Context
+## Contesto Accademico
 
-**Bachelor's Degree in Statistics**
-University of Florence
-School of Economics and Management
+**Corso di Laurea Triennale in Statistica**
+Università degli Studi di Firenze
+Scuola di Economia e Management
 
-**Academic Year**: 2024/2025
+**Anno Accademico**: 2024/2025
 
-**Thesis title**:
+**Titolo della tesi**:
 
 *Un'analisi statistica degli acidi grassi a catena corta: studio multi-malattia su due campioni paralleli*
 
-**Supervisor**: Prof. Francesco Claudio Stingo
+**Relatore**: Prof. Francesco Claudio Stingo
 
-**Author**: Cecilia Boni
+**Autrice**: Cecilia Boni
